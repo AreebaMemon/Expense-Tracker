@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Expense Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-100 p-4">
+
+  <div class="max-w-4xl mx-auto">
+    <h1 class="text-3xl font-bold text-center mb-6">Expense Tracker</h1>
+
+  
+    <section class="bg-white p-4 rounded shadow mb-6">
+      <form id="expense-form" class="grid gap-4 md:grid-cols-2">
+        <input type="text" id="title" placeholder="Title" class="border p-2 rounded" required>
+        <input type="number" id="amount" placeholder="Amount" class="border p-2 rounded" required>
+        <input type="date" id="date" class="border p-2 rounded" required>
+        <select id="category" class="border p-2 rounded" required>
+          <option value="">Select Category</option>
+          <option>Food</option>
+          <option>Transport</option>
+          <option>Utilities</option>
+          <option>Entertainment</option>
+          <option>Others</option>
+        </select>
+        <textarea id="notes" placeholder="Notes (optional)" class="border p-2 rounded md:col-span-2"></textarea>
+        <button type="submit" class="bg-blue-500 text-white p-2 rounded hover:bg-blue-600 md:col-span-2">Add Expense</button>
+      </form>
+    </section>
+
+    
+    <section class="bg-white p-4 rounded shadow mb-6">
+      <h2 class="text-xl font-semibold mb-4">All Expenses</h2>
+      <div id="expense-list" class="space-y-4"></div>
+    </section>
+
+    
+    <section class="bg-white p-4 rounded shadow">
+      <h2 class="text-xl font-semibold mb-4">Summary</h2>
+      <p><strong>Total:</strong> Rs <span id="total">0</span></p>
+      <canvas id="category-chart" class="mt-4"></canvas>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
